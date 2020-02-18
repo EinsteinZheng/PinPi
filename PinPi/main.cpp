@@ -5,11 +5,15 @@
 //  Created by Einstein Zheng on 2/11/20.
 //  Copyright © 2020 Mocoder Inc. All rights reserved.
 //
+//  仅可用于*nix系统!!!
+//  Windows系统无法编译
 
 #include <iostream>
 #include <iomanip>
 #include <random>
 using namespace std;
+
+#if !(defined(_WIN32)||defined(_WIN64))
 
 struct pos {
     double x;
@@ -50,3 +54,5 @@ int main(int argc, const char * argv[]) {
     cout<<setprecision(10)<<4.0*(double)in/(double)all<<endl;
     return 0;
 }
+
+#endif
