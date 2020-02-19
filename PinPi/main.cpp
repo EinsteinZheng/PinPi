@@ -15,6 +15,7 @@ using namespace std;
 
 #if !(defined(_WIN32)||defined(_WIN64))
 
+
 struct pos {
     double x;
     double y;
@@ -31,7 +32,7 @@ struct pos {
 inline pos generatePosition()
 {
     random_device rd("/dev/random");
-    return pos((double)rd()/(double)(unsigned int)4294967295,(double)rd()/(double)(unsigned int)4294967295);
+    return pos((double)rd()/(double)(unsigned int)UINT_MAX,(double)rd()/(double)(unsigned int)UINT_MAX);
 }
 
 inline bool isInCircle(pos point)
@@ -46,7 +47,7 @@ inline bool pipe()
 
 int main(int argc, const char * argv[]) {
     long all=0,in=0;
-    for(;all<3000000;++all)
+    for(;all<230502;++all)
     {
         if(pipe())
             ++in;
